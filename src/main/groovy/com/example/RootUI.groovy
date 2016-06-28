@@ -17,28 +17,12 @@ class RootUI extends UI {
 
     @Override
     protected void init(VaadinRequest request) {
-        // 新增 最外框 layout (殼)
-        def layout = new VerticalLayout()
-        setContent(layout)
+        // 使用 Template Component
+        def template = new Template()
+        setContent(template)
 
-        // 加入二顆按鈕
-        layout.addComponent(new Button("Page1", { e->
-            // 導頁至 page 1
-            getUI().navigator.navigateTo(Page1.VIEW_NAME)
-        }  as Button.ClickListener))
-        layout.addComponent(new Button("Page2", { e->
-            // 導頁至 page 2
-            getUI().navigator.navigateTo(Page2.VIEW_NAME)
-        }  as Button.ClickListener))
-
-
-        // 頁面欲更新的容器
-        def content = new VerticalLayout()
-        layout.addComponent(content)
-
-        // 導航、路由
-        def navigator = new Navigator(this, content)
+        // 導航、路由, 替換 template.content
+        def navigator = new Navigator(this, template.content)
         navigator.addProvider(viewProvider)
-
     }
 }

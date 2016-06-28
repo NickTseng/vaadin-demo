@@ -11,7 +11,7 @@ class Page1  extends VerticalLayout implements View {
     static final String VIEW_NAME = 'Page1'
 
     Page1() {
-        addComponent(new Label("This is Page 1"))
+        addComponent(new Label("This is Page 11111111111111111"))
     }
 
     @Override

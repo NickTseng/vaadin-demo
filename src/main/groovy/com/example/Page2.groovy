@@ -11,7 +11,7 @@ class Page2  extends VerticalLayout implements View {
     static final String VIEW_NAME = 'Page2'
 
     Page2() {
-        this.addComponent(new Label("This is Page 2"))
+        this.addComponent(new Label("This is Page 222222222222"))
     }
     @Override
     void enter(final ViewChangeListener.ViewChangeEvent event) {
